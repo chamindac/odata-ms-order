@@ -11,8 +11,8 @@ namespace ODATA.MS.ORDER.API.Data
     {
         public OderDbContext() : base() { }
         public OderDbContext(DbContextOptions<OderDbContext> options) : base(options) { }
-        public virtual DbSet<Order> Authors { get; set; }
-        public virtual DbSet<OrderItem> Books { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderItem> OrderItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

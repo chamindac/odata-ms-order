@@ -40,7 +40,7 @@ namespace ODATA.MS.ORDER.API.Migrations
                     b.HasIndex("Number")
                         .IsUnique();
 
-                    b.ToTable("Authors");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("ODATA.MS.ORDER.API.Models.OrderItem", b =>
@@ -52,6 +52,9 @@ namespace ODATA.MS.ORDER.API.Migrations
 
                     b.Property<string>("ItemName")
                         .HasColumnType("text");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
@@ -66,7 +69,25 @@ namespace ODATA.MS.ORDER.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItems");
+                });
+
+            modelBuilder.Entity("ODATA.MS.ORDER.API.Models.OrderItem", b =>
+                {
+                    b.HasOne("ODATA.MS.ORDER.API.Models.Order", "Order")
+                        .WithMany("Items")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("ODATA.MS.ORDER.API.Models.Order", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

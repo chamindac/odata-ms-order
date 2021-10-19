@@ -18,5 +18,7 @@ namespace ODATA.MS.ORDER.API.Models
         public string CustomerName { get; set; }
         public DateTime Date{ get; set; }
 
+        public ICollection<OrderItem> Items { get; set; }
+
     }
 }

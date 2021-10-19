@@ -16,5 +16,9 @@ namespace ODATA.MS.ORDER.API.Models
         public string ItemName { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
+
+        [ForeignKey("Order")]
+        public int OrderId { get; set; }
+        public Order Order{ get; set; }
     }
 }
