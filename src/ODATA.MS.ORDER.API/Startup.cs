@@ -33,7 +33,7 @@ namespace ODATA.MS.ORDER.API
         public void ConfigureServices(IServiceCollection services)
         {
             services //.AddEntityFrameworkNpgsql()
-                    .AddDbContext<OderDbContext>(opt =>
+                    .AddDbContext<OrderDbContext>(opt =>
                         opt.UseNpgsql(Configuration.GetConnectionString("OrderDBConnection"))
                         );
 

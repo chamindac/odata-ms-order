@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace ODATA.MS.ORDER.API.Data
 {
-    public class OderDbContext:DbContext
+    public class OrderDbContext:DbContext
     {
-        public OderDbContext() : base() { }
-        public OderDbContext(DbContextOptions<OderDbContext> options) : base(options) { }
+        public OrderDbContext() : base() { }
+        public OrderDbContext(DbContextOptions<OrderDbContext> options) : base(options) { }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderItem> OrderItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(OderDbContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrderDbContext).Assembly);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ODATA.MS.CORE.API.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace ODATA.MS.ORDER.API.Models
 {
     [Index(nameof(Number), IsUnique = true)]
-    public class Order
+    public class Order: BaseEntity<Order>
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

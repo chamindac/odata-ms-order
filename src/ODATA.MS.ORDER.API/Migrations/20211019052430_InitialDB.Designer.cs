@@ -9,7 +9,7 @@ using ODATA.MS.ORDER.API.Data;
 
 namespace ODATA.MS.ORDER.API.Migrations
 {
-    [DbContext(typeof(OderDbContext))]
+    [DbContext(typeof(OrderDbContext))]
     [Migration("20211019052430_InitialDB")]
     partial class InitialDB
     {

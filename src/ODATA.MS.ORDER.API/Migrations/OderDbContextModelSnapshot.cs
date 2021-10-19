@@ -8,7 +8,7 @@ using ODATA.MS.ORDER.API.Data;
 
 namespace ODATA.MS.ORDER.API.Migrations
 {
-    [DbContext(typeof(OderDbContext))]
+    [DbContext(typeof(OrderDbContext))]
     partial class OderDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
