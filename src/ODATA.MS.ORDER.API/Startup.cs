@@ -78,7 +78,7 @@ namespace ODATA.MS.ORDER.API
         public static IEdmModel GetEdmModel()
         {
             ODataConventionModelBuilder modelBuilder = new ODataConventionModelBuilder();
-            modelBuilder.EntitySet<Order>("Orders"); // must match BooksController
+            modelBuilder.EntitySet<Order>("Order");
             
             //modelBuilder.EntityType<Book>()
             //            .Action("AddRating")
